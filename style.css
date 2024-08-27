@@ -1,0 +1,219 @@
+:root {
+    --primary: #0a3871;
+    --secondary: #d8dfe8;
+    --height-logo: 40px;
+    --height-botones: 67px;
+    --font-size: 16px;
+  }
+  
+  body {
+    background-color: #f3f5fc;
+    font-family: "Inter", sans-serif;
+    font-size: var(--font-size);
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .logo {
+    height: var(--height-logo);
+    position: absolute;
+    left: 3.667%;
+    top: 3.743%;
+  }
+  
+  .principal {
+    box-sizing: border-box;
+    padding: 3rem 3rem 3rem calc(3.667% + var(--height-logo));
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+  
+  .entrada {
+    width: calc(100% / 3 * 2);
+    box-sizing: border-box;
+    padding-right: 30px;
+    height: 100%;
+  }
+  
+  textarea {
+    box-sizing: border-box;
+    padding-top: 100px;
+    height: calc(100% - (var(--height-botones) + (var(--font-size) * 2)));
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    resize: none;
+    font-size: 32px;
+    color: var(--primary);
+  }
+  
+  textarea::placeholder {
+    color: var(--primary);
+  }
+  
+  textarea:focus {
+    outline: none;
+  }
+  
+  .acciones {
+    height: calc(var(--height-botones) + (var(--font-size) * 2));
+  }
+  
+  .alerta {
+    display: flex;
+    margin-bottom: var(--font-size);
+  }
+  
+  .botones {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100% - (var(--font-size) * 2));
+  }
+  
+  .botones button {
+    width: calc(50% - 1rem);
+    height: var(--height-botones);
+    border-radius: 24px;
+    border: 1px solid;
+    font-size: 16px;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+  }
+  
+  .btn-secondary {
+    background-color: var(--secondary);
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  
+  .respuesta {
+    background-color: white;
+    width: calc(100% / 3);
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+    padding: 32px;
+    box-sizing: border-box;
+    height: 100%;
+  }
+  
+  .respuesta .notfound {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .notfound img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .notfound h3 {
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .response {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .response p {
+    height: calc(100% - var(--height-botones));
+    color: #495057;
+    font-size: 24px;
+    overflow: hidden;
+    overflow-y: overlay;
+    overflow-wrap: break-word;
+    margin-bottom: var(--font-size);
+  }
+  
+  .response p::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .btn-copy {
+    width: 100%;
+    height: var(--height-botones);
+    border-radius: 24px;
+    border: 1px solid;
+    font-size: 16px;
+    background-color: white;
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  
+  /* Para pantallas de hasta 768px de ancho (tablets) */
+  @media only screen and (max-width: 768px) {
+    /* Estilos para pantallas de tablet */
+    .principal {
+      display: block;
+      overflow-y: scroll;
+    }
+  
+    .principal textarea {
+      padding-top: 50px;
+    }
+  
+    .entrada {
+      padding-right: 0px;
+      padding-bottom: 64px;
+      width: 100%;
+      height: 80%;
+    }
+  
+    .respuesta {
+      display: flex;
+      width: 100%;
+      min-height: 20%;
+      height: fit-content;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .notfound img {
+      display: none;
+    }
+  
+    .response {
+      height: auto;
+      overflow: unset;
+      overflow-y: unset;
+    }
+  }
+  
+  /* Para pantallas de hasta 480px de ancho (móviles) */
+  @media only screen and (max-width: 480px) {
+    .principal {
+      display: block;
+      overflow-y: scroll;
+      height: auto;
+    }
+  
+    .entrada textarea{
+      height: 200px;
+    }
+  
+    .acciones {
+      height: auto;
+    }
+  
+    .botones {
+      display: block;
+    }
+  
+    .botones button {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
